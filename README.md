@@ -17,6 +17,7 @@
 - Composer
 - Nodejs (npm yarn)
 - Docker (portainer)
+- git
 - Maker
 
 ## Théme
