@@ -20,13 +20,13 @@
 - git
 - Maker
 
-## Théme
+## Thème
 
-### Pour le Théme de L'OS: 
+### L'OS: 
 
 [![Config Théme](img/ajustement_config.png)](https://raw.githubusercontent.com/theomeunier/dotfile/master/img/ajustement_config.png)
 
-### Pour le Terminal:
+### Terminal:
  - Oh_my_zsh 
    - power level 10K
    - zsh-autosuggestion
@@ -38,4 +38,4 @@
 - Atom Material Icon 
 - Material Theme
 
-[![Config Théme](img/theme_phpstrom.png)](https://raw.githubusercontent.com/theomeunier/dotfile/master/img/theme_phpstrom.png)
+[![Config Thème](img/theme_phpstrom.png)](https://raw.githubusercontent.com/theomeunier/dotfile/master/img/theme_phpstrom.png)
