@@ -30,4 +30,4 @@ mkdir .icons
 - Icon: https://www.gnome-look.org/p/1273372
 - Curseurs: https://www.gnome-look.org/p/1273372
 
-### 5 Mettre les fichiers dans les dossiers correspondant
+### 5 - Mettre les fichiers dans les dossiers correspondant
