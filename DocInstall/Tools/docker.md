@@ -33,7 +33,7 @@ sudo apt-cache policy docker-ce
 
 ### 7 - Installation docker
 ```shell
-sudo systemctl status docker
+sudo apt install docker-ce
 ```
 
 ### 8 - Vérifier l'installation docker

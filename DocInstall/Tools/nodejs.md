@@ -11,3 +11,13 @@ sudo apt-get install nodejs npm
 ```shell
 node --verison
 ```
+
+- Installer Yarn 
+```shell
+sudo npm install --global yarn
+```
+
+- Vérifier que yarn est bien install
+```shell
+yarn --version
+```
