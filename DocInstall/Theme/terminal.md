@@ -19,6 +19,11 @@ sudo apt install zsh -y
 source ~/.zshrc
 ```
 
+## Installation Oh-my-zsh
+```shell
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
 ## Installation de Power Level 10K (thème)
 
 ### 1 - Installation
