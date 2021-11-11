@@ -13,6 +13,7 @@ update = $(sudo) apt update && apt upgrade
 
 ## Thème
 .PHONY: terminal
+terminal:
 	$(cd)
 	$(install) zsh -y
 	sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -21,6 +22,7 @@ update = $(sudo) apt update && apt upgrade
 	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 
 .PHONY: os
+os:
 	$(sudo) apt-add-repository universe
 	$(install) -y gnome-tweak-tool
 	$(install) -y gnome-shell-extensions
@@ -30,6 +32,7 @@ update = $(sudo) apt update && apt upgrade
 
 ## Tool
 .PHONY: docker
+docker:
 	$(update)
 	$(install) apt-transport-https ca-certificates curl software-properties-common
 	curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
@@ -40,16 +43,19 @@ update = $(sudo) apt update && apt upgrade
 	sudo systemctl status docker
 
 .PHONY: docker-compose
+docker-compose:
 	sudo curl -L "https://github.com/docker/compose/releases/download/1.26.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 	sudo chmod +x /usr/local/bin/docker-compose
 	sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 
 .PHONY: portainer
+portainer:
 	docker volume create portainer_data
 	docker run -d -p 8000:8000 -p 9000:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer
 
 
 .PHONY: node
+node:
 	$(update)
 	$(install) -y nodejs npm
 	node -v
@@ -57,6 +63,7 @@ update = $(sudo) apt update && apt upgrade
 	yarn --version
 
 .PHONY: php
+php:
 	$(install) -y software-properties-common
 	sudo add-apt-repository ppa:ondrej/php
 	$(update)
@@ -64,7 +71,8 @@ update = $(sudo) apt update && apt upgrade
 	php -v
 	$(install) openssl php-common php-curl php-json php-mbstring php-mysql php-xml php-zip
 
-.PHONY: composer:
+.PHONY: composer
+composer:
 	php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 	php -r "if (hash_file('sha384', 'composer-setup.php') === '906a84df04cea2aa72f40b5f787e49f22d4c2f19492ac310e8cba5b96ac8b64115ac402c8cd292b8a03482574915d1a8') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
 	php composer-setup.php
