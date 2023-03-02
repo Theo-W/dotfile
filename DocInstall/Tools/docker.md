@@ -1,68 +1,44 @@
-# Installation docker et portainer
+## Installation docker et portainer
 
-### 1 - Mettre à jour les packages existante
+### 1 - Mettre à jour / installation des packages
 ```shell
-sudo apt update
+sudo apt-get update
+
+sudo apt-get install \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release
 ```
 
-### 2 - Installez quelques paquets pré-requis qui permettent à apt d'utiliser les paquets sur HTTPS
+### Ajouts de la Clé GPG
 ```shell
-sudo apt install apt-transport-https ca-certificates curl software-properties-common
+sudo mkdir -m 0755 -p /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 ```
 
-### 3 - Ajoutez la clé GPG du dépôt officiel de Docker à votre système
+### Installation et configuration du repository
 ```shell
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 ```
 
-### 4 - Ajoutez le référentiel Docker aux sources APT
+### Petite mise à jout
+````shell
+sudo apt-get update
+````
+
+### Installation de docker et les outils
 ```shell
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
 
-### 5 - Mettre à jour les packages
-```shell
-sudo apt update
-```
-
-### 6 - Assurez-vous que vous êtes sur le point d'installer à partir du dépôt Docker et non du dépôt Ubuntu par défaut
-```shell
-sudo apt-cache policy docker-ce
-```
-[![docker_policy](../../img/docker_policy.png)](https://raw.githubusercontent.com/theomeunier/dotfile/master/img/docker_policy.png)
-
-### 7 - Installation docker
-```shell
-sudo apt install docker-ce
-```
-
-### 8 - Vérifier l'installation docker
-```shell
-sudo systemctl status docker
-```
-[![confim_install_docker](../../img/confim_install_docker.png)](https://raw.githubusercontent.com/theomeunier/dotfile/master/img/confim_install_docker.png)
-
-### 9 - Donner les droits admin à docker
+## Ajout des droits sur docker
 ```shell
 sudo usermod -aG docker ${USER}
 su - ${USER}
 id -nG
-```
-
-## Installtion docker-compose
-
-### 1 - Installtion
-```shell
-sudo curl -L "https://github.com/docker/compose/releases/download/1.26.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-
-sudo chmod +x /usr/local/bin/docker-compose
-
-sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
-```
-
-### 2 - Vérifier que docker-composer est bien installer
-```shell
-docker-compose --version
 ```
 
 ## Installtion portainer

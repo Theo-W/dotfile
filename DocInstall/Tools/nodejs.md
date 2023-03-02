@@ -5,6 +5,7 @@ Nodejs est le gestionnaire de librairie js
 - Pour intaller nodejs excuter les commande suivante
 ```shell
 sudo apt-get update
+curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
 sudo apt-get install nodejs npm
 ```
 - Pour vérifier que node est bien installer 
@@ -15,9 +16,11 @@ node --verison
 - Installer Yarn 
 ```shell
 sudo npm install --global yarn
+yarn --version
 ```
 
-- Vérifier que yarn est bien install
+- Installer Pnpm
 ```shell
-yarn --version
+sudo npm install --global pnpm
+pnpm --version
 ```
