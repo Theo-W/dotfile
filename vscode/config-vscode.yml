@@ -1,0 +1,60 @@
+{
+    //editor
+    "window.zoomLevel": 0.5,
+    "editor.minimap.enabled": false,
+    "editor.fontSize": 16,
+    "editor.formatOnSave": false,
+    "editor.formatOnPaste": false,
+    "editor.renderWhitespace": "trailing",
+    "editor.linkedEditing": true,
+    "editor.occurrencesHighlight": false,
+    "editor.suggest.insertMode": "replace",
+    "editor.acceptSuggestionOnCommitCharacter": false,
+    "editor.fontFamily": "'JetBrains Mono',Consolas, 'Courier New', monospace",
+    "editor.fontLigatures": true,
+    "editor.lineHeight": 26,
+
+    //files
+    "files.autoSave": "onFocusChange",
+    "files.defaultLanguage": "md",
+    "files.exclude": {
+        "**/.git": true,
+        "**/.idea": true,
+        "**/.svn": true,
+    },
+
+    //explorer
+    "explorer.autoReveal": false,
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmDelete": false,
+
+    //workbench
+    "workbench.tree.indent": 15,
+    "workbench.tree.renderIndentGuides": "always",
+    "workbench.editor.enablePreview": false,
+
+    //emmet
+    "emmet.triggerExpansionOnTab": true,
+
+    //git
+    "git.confirmSync": false,
+    "git.enableSmartCommit": true,
+    "gitlens.currentLine.enabled": false,
+    "gitlens.codeLens.enabled": false,
+    "gitlens.hovers.annotations.over": "line",
+
+    //theme
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorTheme": "Catppuccin Macchiato",
+
+    //prettier
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier.vscode"
+    },
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier.vscode"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier.vscode"
+    }
+}

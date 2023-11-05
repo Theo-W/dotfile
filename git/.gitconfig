@@ -1,0 +1,12 @@
+[user]
+        name = tmeunier
+        username = tmeunier
+        email = theo.meunier41@gmail.com
+[commit]
+        autocrlf = true
+[core]
+        autocrlf = true
+        eol = lf
+        editor = nano
+[init]
+        defaultBranch = master
