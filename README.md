@@ -42,6 +42,13 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/
 }
 ```
 
+### Add color scheme on Windows terminal
+```json
+{
+    "colorScheme": "Campbell"
+}
+```
+
 
 ## Install NVM
 ```shell
